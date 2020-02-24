@@ -2,7 +2,9 @@
 FROM jupyter/all-spark-notebook
 
 USER root
-ENV PYTHONPATH=/usr/local/spark-2.4.5-bin-hadoop2.7/jars/graphframes.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python:PYSPARK_DRIVER_PYTHON=ipython
+#ENV PYTHONPATH=/usr/local/spark-2.4.5-bin-hadoop2.7/jars/graphframes.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python:PYSPARK_DRIVER_PYTHON=ipython
+ENV PYTHONPATH=/usr/local/spark-2.4.5-bin-hadoop2.7/jars/graphframes.zip:/usr/local/spark/python:/usr/local/spark/python/lib/py4j-0.10.7-src.zip
+
 RUN ["/bin/bash", "-c", "python -m pip install --upgrade pip"]
 # RUN python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 # RUN wget -P /usr/local/spark-2.2.0-bin-hadoop2.7/jars/  https://cpchou0701.diskstation.me/jdk/jdbc/mssql-jdbc/mssql-jdbc-6.4.0.jre8.jar
