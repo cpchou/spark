@@ -1,5 +1,8 @@
 #FROM keineahnung2345/edgarperezsampedro-blog_docker:20181126
 FROM jupyter/all-spark-notebook
+
+
+USER root
 ENV PYTHONPATH=/usr/local/spark-2.4.5-bin-hadoop2.7/jars/graphframes.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python/lib/py4j-0.10.4-src.zip:/usr/local/spark-2.2.0-bin-hadoop2.7/python:PYSPARK_DRIVER_PYTHON=ipython
 
 RUN ["/bin/bash", "-c", "python -m pip install --upgrade pip"]
