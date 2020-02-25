@@ -14,3 +14,9 @@ RUN ["/bin/bash", "-c", "wget  -P /usr/local/spark-2.4.5-bin-hadoop2.7/jars/  ht
 # RUN wget -q -P /usr/local/spark-2.2.0-bin-hadoop2.7/jars/  https://dl.bintray.com/spark-packages/maven/graphframes/graphframes/0.7.0-spark2.2-s_2.11/raphframes-0.7.0-spark2.4-s_2.11.jar
 RUN ["/bin/bash", "-c", "wget  -P /usr/local/spark-2.4.5-bin-hadoop2.7/jars/  https://cpchou0701.diskstation.me/jdk/graphframes-0.6.0-spark2.2-s_2.11.jar -O graphframes.zip"]
 RUN ["/bin/bash", "-c", "python -m  pip install torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html"]
+
+RUN apt update
+RUN apt upgrade -y
+RUN apt install -y net-tools
+RUN apt install -y iputils-ping
+RUN apt install -y telnet
